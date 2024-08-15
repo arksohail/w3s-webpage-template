@@ -197,7 +197,7 @@ footer p a {
     right: 0;
     cursor: pointer;
     z-index: 3;
-    padding: 10px;
+    padding: 11px 10px;
   }
   .menu-toggle {
     position: fixed;
@@ -212,7 +212,7 @@ footer p a {
   .hamburger-menu span::before {
     display: block;
     content: "";
-    width: 36px;
+    width: 25px;
     margin-top: 4px;
     border: 2px solid #fff;
     border-radius: 2px;
@@ -222,10 +222,10 @@ footer p a {
   .hamburger-menu span:first-child::before {
     margin-top: 0;
   }
-  .menu-toggle:hover+.hamburger-menu  {
+  .menu-toggle:hover + .hamburger-menu {
     background-color: #fff;
   }
-  .menu-toggle:hover+.hamburger-menu  span::before {
+  .menu-toggle:hover + .hamburger-menu span::before {
     border-color: #000;
   }
   .menu-toggle:checked + .hamburger-menu span:nth-child(2):before {
@@ -246,14 +246,14 @@ footer p a {
     left: -250px;
   }
   .side-nav-menu::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 250px;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
     width: calc(100vw - 250px);
-    transition: .2s ease;
+    transition: 0.2s ease;
     transform: scaleX(0);
     transform-origin: left;
   }
@@ -267,5 +267,32 @@ footer p a {
   main,
   footer {
     margin-left: 0;
+  }
+}
+/* Media Query */
+@media only screen and (max-width: 600px) {
+  .main-nav a:hover,
+  h1:hover,
+  .side-navigation li:hover,
+  .page-nav a:hover,
+  .page-nav a.active:hover,
+  .menu-toggle:hover {
+    pointer-events: none;
+  }
+  .main-nav li:nth-child(n + 2) {
+    display: none;
+  }
+  /* Main > Section Style */
+  main,
+  footer {
+    margin-left: 0;
+  }
+  section {
+    flex-wrap: wrap;
+    padding: 32px 0 64px;
+  }
+  .content,
+  .ad {
+    width: 100%;
   }
 }
