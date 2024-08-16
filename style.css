@@ -53,6 +53,9 @@ a {
 ul {
   list-style-type: none;
 }
+input, button, a {
+  outline: none;
+}
 .container {
   position: relative;
 }
@@ -64,7 +67,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 3;
 }
 .main-nav {
   display: flex;
@@ -92,6 +95,9 @@ h1:hover {
   bottom: 0;
   width: 250px;
   z-index: 3;
+}
+.menu-toggle {
+  display: none;
 }
 h3 {
   font-size: 21px;
@@ -200,8 +206,9 @@ footer p a {
     padding: 11px 10px;
   }
   .menu-toggle {
+    display: inline-block;
     position: fixed;
-    transform: scale(4, 3);
+    transform: scale(3);
     top: 0;
     right: 0;
     z-index: 4;
@@ -233,11 +240,9 @@ footer p a {
   }
   .menu-toggle:checked + .hamburger-menu span:first-child::before {
     transform: translateY(10px) rotatez(45deg);
-    opacity: 1;
   }
   .menu-toggle:checked + .hamburger-menu span:last-child::before {
     transform: translateY(-6px) rotatez(-45deg);
-    opacity: 1;
   }
   /* Side Navigation Style */
   .side-nav-menu {
@@ -275,9 +280,23 @@ footer p a {
   h1:hover,
   .side-navigation li:hover,
   .page-nav a:hover,
-  .page-nav a.active:hover,
-  .menu-toggle:hover {
+  .page-nav a.active:hover {
     pointer-events: none;
+  }
+  .menu-toggle:hover + .hamburger-menu {
+    background-color: #000;
+  }
+  .menu-toggle:hover + .hamburger-menu span::before {
+    border-color: #fff;
+  }
+  .menu-toggle:checked + .hamburger-menu span:nth-child(2):before {
+    opacity: 0;
+  }
+  .menu-toggle:checked + .hamburger-menu span:first-child::before {
+    transform: translateY(10px) rotatez(45deg);
+  }
+  .menu-toggle:checked + .hamburger-menu span:last-child::before {
+    transform: translateY(-6px) rotatez(-45deg);
   }
   .main-nav li:nth-child(n + 2) {
     display: none;
