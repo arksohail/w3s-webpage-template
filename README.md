@@ -1,4 +1,4 @@
-# Responsive Webpage Template
+# W3.CSS Responsive Webpage Template | Clone
 
 This project is a responsive webpage template based on a W3.CSS design, incorporating a modern layout with a fixed header, a side navigation menu, main content sections, and a footer. The design is crafted using HTML and CSS, with styles that ensure a visually appealing and user-friendly interface across various devices.
 
